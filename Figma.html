@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Baking by Drist, kue dan pastry untuk setiap momen spesial."
+    />
+    <title>Baking by Drist</title>
+
+    <link rel="stylesheet" href="stlye.css" />
+    <script src="javascript.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home">
+        <img
+          src="chatgpt_image_oct_7__2026__10_41_54_am-removebg-preview.png"
+          alt="Baking by Drist"
+        />
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Buka navigasi"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#favorites">Product</a>
+        <a href="#custom">Custom</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Sweet moments start here.</p>
+          <h1>Manisnya Momen,<br />Dimulai dari Satu Gigitan</h1>
+          <p class="hero-description">
+            Nikmati berbagai pilihan kue dan pastry yang dibuat dengan bahan
+            berkualitas, rasa yang lezat, dan tampilan yang cantik untuk
+            menemani setiap momen.
+          </p>
+          <a class="button button-primary" href="#favorites">Explore</a>
+        </div>
+      </section>
+
+      <section class="featured section-wrap" id="menu">
+        <div class="search-bar">
+          <span class="search-menu-label">☰ <span>Our Menu</span></span>
+          <form id="searchForm" class="search-form" role="search">
+            <input
+              id="menuSearch"
+              type="search"
+              placeholder="Cari menu kue..."
+              aria-label="Cari menu kue"
+            />
+            <button type="submit" aria-label="Cari">⌕</button>
+          </form>
+        </div>
+
+        <div class="featured-content">
+          <div class="featured-copy">
+            <p class="eyebrow light">Baked with love</p>
+            <h2 id="featuredTitle">Strawberry<br />Cream Cake</h2>
+            <p id="featuredDescription">
+              Kue lembut dengan perpaduan sponge cake, krim vanilla yang creamy,
+              dan potongan stroberi segar yang memberikan rasa manis dan sedikit
+              asam di setiap gigitan.
+            </p>
+            <p id="searchMessage" class="search-message" aria-live="polite"></p>
+          </div>
+
+          <div class="featured-photo-wrap">
+            <img
+              id="featuredImage"
+              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+              alt="Strawberry cream cake"
+            />
+            <button
+              class="favorite-heart"
+              id="favoriteButton"
+              aria-label="Simpan menu favorit"
+              aria-pressed="false"
+            >
+              ♡
+            </button>
+          </div>
+        </div>
+
+        <div class="slider-controls" aria-label="Navigasi menu unggulan">
+          <button
+            class="slider-arrow"
+            id="menuPrev"
+            aria-label="Menu sebelumnya"
+          >
+            ‹
+          </button>
+          <div class="slider-dots" id="menuDots"></div>
+          <button
+            class="slider-arrow"
+            id="menuNext"
+            aria-label="Menu berikutnya"
+          >
+            ›
+          </button>
+        </div>
+      </section>
+
+      <section class="favorites section-wrap" id="favorites">
+        <div class="section-heading">
+          <p class="eyebrow">A little something sweet</p>
+          <h2>Our Favorites</h2>
+          <p>Pilihan favorit yang siap menemani hari dan momen spesialmu.</p>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-name="Cookies">
+            <div class="product-image">
+              <img
+                src="4a87a3dd3bb42366735d8e4f8a71adef-removebg-preview 1.png"
+                alt="Cookies"
+              />
+            </div>
+            <a class="shop-button" href="#contact">Shop Now <span>↗</span></a>
+            <h3>Cookies</h3>
+            <p>Deskripsi</p>
+          </article>
+          <article class="product-card" data-name="Cup Cake">
+            <div class="product-image">
+              <img src="Berry pastry.png" alt="Cup cake" />
+            </div>
+            <a class="shop-button" href="#contact">Shop Now <span>↗</span></a>
+            <h3>Cup Cake</h3>
+            <p>Deskripsi</p>
+          </article>
+          <article class="product-card" data-name="Croissant">
+            <div class="product-image">
+              <img src="golden croissant.png" alt="Croissant" />
+            </div>
+            <a class="shop-button" href="#contact">Shop Now <span>↗</span></a>
+            <h3>Croissant</h3>
+            <p>Deskripsi</p>
+          </article>
+          <article class="product-card" data-name="Tiramisu">
+            <div class="product-image">
+              <img src="tiramisu.png" alt="Tiramisu" />
+            </div>
+            <a class="shop-button" href="#contact">Shop Now <span>↗</span></a>
+            <h3>Tiramisu</h3>
+            <p>Deskripsi</p>
+          </article>
+        </div>
+        <p id="noProducts" class="no-products" hidden>
+          Menu tidak ditemukan. Coba kata kunci lain.
+        </p>
+      </section>
+
+      <section class="coupon-section">
+        <div class="coupon-slider" id="couponSlider">
+          <article class="coupon-slide active">
+            <div class="coupon-percent">50% <span>OFF</span></div>
+            <div class="coupon-copy">
+              <h3>Sweet Treat for Your Day</h3>
+              <p>Nikmati potongan harga untuk pilihan produk tertentu.</p>
+            </div>
+            <a class="coupon-button" href="#contact">Get It <span>→</span></a>
+          </article>
+          <article class="coupon-slide">
+            <div class="coupon-percent">20% <span>OFF</span></div>
+            <div class="coupon-copy">
+              <h3>Your First Order</h3>
+              <p>Dapatkan special discount untuk pesanan pertamamu.</p>
+            </div>
+            <a class="coupon-button" href="#contact">Get It <span>→</span></a>
+          </article>
+          <article class="coupon-slide">
+            <div class="coupon-percent">15% <span>OFF</span></div>
+            <div class="coupon-copy">
+              <h3>Share the Sweetness</h3>
+              <p>Ajak temanmu menikmati pilihan kue favorit Baking by Drist.</p>
+            </div>
+            <a class="coupon-button" href="#contact">Get It <span>→</span></a>
+          </article>
+          <article class="coupon-slide">
+            <div class="coupon-percent">BUY 1 <span>GET 1</span></div>
+            <div class="coupon-copy">
+              <h3>Double Joy Promo</h3>
+              <p>Beli 1 dan dapatkan 1 lagi.</p>
+            </div>
+            <a class="coupon-button" href="#contact">Get It <span>→</span></a>
+          </article>
+        </div>
+        <div
+          class="coupon-controls"
+          id="couponDots"
+          aria-label="Navigasi kupon"
+        ></div>
+      </section>
+
+      <section class="promise section-wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Made with care</p>
+          <h2>Our Promise</h2>
+        </div>
+        <div class="promise-stats">
+          <article>
+            <strong>100%</strong>
+            <h3>Freshly Made</h3>
+            <p>Dibuat fresh agar rasa dan teksturnya tetap nikmat.</p>
+          </article>
+          <article>
+            <strong>90%</strong>
+            <h3>Quality Ingredients</h3>
+            <p>Menggunakan bahan pilihan untuk menghasilkan rasa terbaik.</p>
+          </article>
+          <article>
+            <strong>80%</strong>
+            <h3>Made with Care</h3>
+            <p>Setiap pesanan dibuat dengan perhatian pada detail.</p>
+          </article>
+          <article>
+            <strong>70%</strong>
+            <h3>Made for You</h3>
+            <p>Karena setiap momen punya cerita yang berbeda.</p>
+          </article>
+        </div>
+        <div class="promise-details">
+          <img src="download (2).jpg" alt="Bahan-bahan untuk membuat kue" />
+          <div class="promise-list">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>RASA</h3>
+                <p>
+                  Perpaduan rasa yang seimbang, tekstur yang lembut, dan bahan
+                  pilihan dalam setiap gigitan.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>DESAIN</h3>
+                <p>
+                  Detail yang cantik dan sentuhan personal, dibuat untuk
+                  melengkapi cerita di setiap momenmu.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>PELAYANAN</h3>
+                <p>
+                  Dari memilih rasa hingga menentukan desain, kami siap membantu
+                  dengan hangat dan penuh perhatian.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials section-wrap">
+        <div class="testimonial-heading">
+          <h2>What People<br />Are Saying</h2>
+          <span>“ ”</span>
+        </div>
+        <div class="testimonial-grid">
+          <article>
+            <p>
+              Aku pesan custom cake dan hasilnya sesuai banget sama request.
+              Desainnya cantik, rasanya juga enak. Puas banget
+            </p>
+            <strong>- Alya</strong><b>“</b>
+          </article>
+          <article>
+            <p>
+              Salah satu bakery favoritku. Pilihan kuenya banyak, tampilannya
+              cantik, dan rasanya nggak mengecewakan.
+            </p>
+            <strong>- Nanda</strong><b>“</b>
+          </article>
+          <article>
+            <p>
+              Packaging-nya rapi dan kuenya sampai dengan kondisi yang bagus.
+              Rasanya fresh dan bikin pengen order lagi.
+            </p>
+            <strong>- Dinda</strong><b>“</b>
+          </article>
+        </div>
+      </section>
+
+      <section class="custom-section" id="custom">
+        <span class="decor-cake decor-left" aria-hidden="true">
+          <img src="Little celebration cake.png" alt="" />
+        </span>
+        <span class="decor-cake decor-right" aria-hidden="true">
+          <img src="Custom celebration cake.png" alt="" />
+        </span>
+        <div class="custom-content">
+          <h2>Make It Yours</h2>
+          <h3>Punya kue impian sendiri?</h3>
+          <p>
+            Ceritakan ide, tema, warna, atau desain yang kamu inginkan. Kami
+            akan membantu mengubahnya menjadi kue yang sesuai dengan momen
+            spesialmu.
+          </p>
+          <a class="custom-cta" href="#contact"
+            ><span>Custom Your Cake</span><strong>Start Customizing</strong></a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-brand-wrap">
+        <a class="brand footer-brand" href="#home">
+          <img
+            src="chatgpt_image_oct_7__2026__10_41_54_am-removebg-preview.png"
+            alt="Baking by Drist"
+          />
+        </a>
+
+        <p class="copyright">© 2026 Baking by Drist. All Rights Reserved.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Explore</h3>
+        <a href="#home">Home</a>
+        <a href="#favorites">Menu</a>
+        <a href="#custom">Custom Cake</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Our Menu</h3>
+        <a href="#favorites">Cakes</a>
+        <a href="#favorites">Pastry</a>
+        <a href="#favorites">Cookies</a>
+        <a href="#favorites">Dessert</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <a href="#contact">Instagram</a>
+        <a href="https://wa.me/">WhatsApp</a>
+        <a href="mailto:hello@bakingbydrist.com">Email</a>
+        <a href="#contact">Location</a>
+      </div>
+    </footer>
+  </body>
+</html>
