@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Daftar | Baking by Drist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="auth.css" />
+    <script src="regis.js" defer></script>
+  </head>
+  <body>
+    <div class="top-shape"></div>
+    <a class="logo" href="Figma.html"
+      ><div class="auth-logo">
+        <img
+          src="ChatGPT_Image_Oct_7__2026__10_41_54_AM-removebg-preview.png"
+          alt="Baking by Drist"
+        /></div
+    ></a>
+    <main class="auth-card register-card">
+      <header>
+        <h1>Daftar Untuk Momen Manis</h1>
+        <p>
+          Buat akun Anda untuk menyimpan pesanan dan menikmati momen manis
+          bersama Baking by Drist.
+        </p>
+      </header>
+      <form id="registerForm">
+        <label for="name">Nama Lengkap</label>
+        <div class="field">
+          <span>♙</span
+          ><input
+            id="name"
+            type="text"
+            placeholder="Nama lengkap Anda"
+            required
+          />
+        </div>
+        <label for="email">Email</label>
+        <div class="field">
+          <span>✉</span
+          ><input
+            id="email"
+            type="email"
+            placeholder="nama@email.com"
+            required
+          />
+        </div>
+        <label for="password">Kata Sandi</label>
+        <div class="field">
+          <span>♙</span
+          ><input
+            id="password"
+            type="password"
+            placeholder="Buat kata sandi"
+            minlength="8"
+            required
+          /><button type="button" class="toggle" data-target="password">
+            ◉
+          </button>
+        </div>
+        <small class="hint">Gunakan minimal 8 karakter.</small
+        ><label for="confirm">Konfirmasi Kata Sandi</label>
+        <div class="field">
+          <span>♙</span
+          ><input
+            id="confirm"
+            type="password"
+            placeholder="Ulangi kata sandi"
+            required
+          /><button type="button" class="toggle" data-target="confirm">
+            ◉
+          </button>
+        </div>
+        <label class="terms"
+          ><input id="agree" type="checkbox" required /><span
+            >Saya menyetujui <a href="#">Syarat & Ketentuan</a> serta
+            <a href="#">Kebijakan Privasi</a> Baking by Drist.</span
+          ></label
+        ><button class="submit" type="submit">Daftar</button>
+      </form>
+      <p class="switch">Sudah punya akun? <a href="login.html">Masuk</a></p>
+    </main>
+  </body>
+</html>

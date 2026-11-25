@@ -263,3 +263,125 @@ mainNav.querySelectorAll("a").forEach((link) => {
     menuToggle.textContent = "☰";
   });
 });
+
+// ELEMENT
+const authOverlay = document.getElementById("authOverlay");
+
+const loginForm = document.getElementById("loginForm");
+const registerForm = document.getElementById("registerForm");
+
+const closeAuth = document.getElementById("closeAuth");
+
+// BUKA POPUP LOGIN
+document.querySelectorAll("[data-auth-open]").forEach((button) => {
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    authOverlay.classList.add("active");
+    showLoginPage();
+  });
+});
+
+// TUTUP POPUP
+closeAuth.addEventListener("click", function () {
+  authOverlay.classList.remove("active");
+});
+
+// KLIK DI LUAR CARD UNTUK MENUTUP
+authOverlay.addEventListener("click", function (e) {
+  if (e.target === authOverlay) {
+    authOverlay.classList.remove("active");
+  }
+});
+
+// TOMBOL ESCAPE
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    authOverlay.classList.remove("active");
+  }
+});
+
+// PINDAH KE REGISTER
+document.getElementById("showRegister").addEventListener("click", function (e) {
+  e.preventDefault();
+  showRegisterPage();
+});
+
+// PINDAH KE LOGIN
+document.getElementById("showLogin").addEventListener("click", function (e) {
+  e.preventDefault();
+  showLoginPage();
+});
+
+// FUNGSI HALAMAN LOGIN
+function showLoginPage() {
+  loginForm.classList.remove("hidden");
+  registerForm.classList.add("hidden");
+}
+
+// FUNGSI HALAMAN REGISTER
+function showRegisterPage() {
+  loginForm.classList.add("hidden");
+  registerForm.classList.remove("hidden");
+}
+
+// LIHAT / SEMBUNYIKAN PASSWORD
+document.querySelectorAll(".toggle-password").forEach((button) => {
+  button.addEventListener("click", function () {
+    const input = document.getElementById(this.dataset.target);
+
+    if (input.type === "password") {
+      input.type = "text";
+    } else {
+      input.type = "password";
+    }
+  });
+});
+
+// VALIDASI REGISTER
+registerForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const password = document.getElementById("registerPassword").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (password.length < 8) {
+    alert("Kata sandi minimal 8 karakter!");
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Konfirmasi kata sandi tidak sesuai!");
+    return;
+  }
+
+  if (!document.getElementById("agreeTerms").checked) {
+    alert("Silakan setujui syarat dan ketentuan!");
+    return;
+  }
+
+  alert("Formulir pendaftaran berhasil divalidasi!");
+
+  // Kembali ke halaman login
+  registerForm.reset();
+  showLoginPage();
+});
+
+// VALIDASI LOGIN
+loginForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  alert(
+    "Formulir login berhasil divalidasi. " +
+      "Hubungkan dengan sistem autentikasi untuk masuk ke akun.",
+  );
+});
+
+// LUPA PASSWORD
+document
+  .getElementById("forgotPassword")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+
+    alert("Fitur lupa kata sandi akan segera tersedia.");
+  });
